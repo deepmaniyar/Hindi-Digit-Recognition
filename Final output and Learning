@@ -1,0 +1,36 @@
+As I expected, CNN gave the highest accuracy with the most basic kind of layers - 99%
+
+SVM C=1, kernel='rbf' - 96.6% 
+After hypter tuning (C=1 gave the best result along with kernel = 'rbf') 
+
+
+Decision Tree - 85%
+After tuning the parameters- 82%
+The accuracy seems to have been decreased after hyper tuning
+
+Random Forest Classifier with 100 estimators- 97.8% accuracy 
+After tuning the parameters - 98% - Best Hyper Parameters: {'criterion': 'gini', 'min_samples_leaf': 1, 'n_estimators': 100, )
+
+Logistic regression (C=1)- 93.8%
+After tuning  the parameters (Best Hyper Parameters C=0.1)- 94.1% 
+Changing the regularization parameter as expected increased the accuracy by a small margin
+
+I wanted to see if these three were made to work together in a voting classifier setting, will it increase or decrease the accuracy
+Voting classifier was made using the tuned parameters and the accuracy was 96.9%
+
+I believe it decreased because the comparison between one which was very high and two which were relatively low led to voting classifier
+choose the output of the other two models as the voting was set to hard
+
+
+
+Finally, I had started doing this to learn Neural Networks and then I had to decide the accuracy of NN to that of the others 
+
+ANN - 96.5% Accuracy
+2 Hidden layers with 250 nodes each
+
+CNN - 99% (for one of the iterations I did get 99.1)
+For CNN it was turning out to be computationally expensive hence I decided to stick 
+with Convuluting twice, Maxpooling and then using dropout to avoid overfitting and then use the same ANN as above
+I am sure the accuracy could've been increased with more layers. 
+
+Thank you for reading this.
